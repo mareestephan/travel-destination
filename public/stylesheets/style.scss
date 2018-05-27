@@ -1,0 +1,172 @@
+//VARIABLES
+$color-white: #fff;
+$color-dark: #393D3F;
+$color-pearl: #f8f5ed;
+$color-beige: #C6C5B9;
+$color-rainyday: #62929E;
+$color-navygrey: #546A7B;
+//MIXIN
+@mixin max_image {
+  max-height: 100%;
+  max-width: 100%
+}
+
+@mixin card_text {
+  color: $color-white;
+}
+
+@mixin dark_text {
+  color: $color-dark;
+}
+
+body {
+  background-color: $color-rainyday;
+  font-family: sans-serif;
+  display: block;
+}
+
+//NAVBAR ++++ SLIDER IMAGES
+header {
+  nav {
+    margin-top: 1em;
+    position: fixed;
+    right: 0;
+    z-index: 100;
+    background: #C6C5B9;
+    opacity: 0.5;
+    ul {
+      li {
+        display: inline-block;
+        font-weight: 600;
+        font-size: 29px;
+        margin: 0 0.65em;
+        transition: 0.3s;
+        &:hover {
+          background: $color-rainyday;
+          opacity: 0.5;
+        }
+      }
+      a {
+        color: $color-dark;
+        font-size: 0.85em;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 0.5em;
+        transition: 0.3s;
+        &:hover {
+          color: $color-rainyday;
+          text-decoration: underline;
+          opacity: 0.1;
+        }
+      }
+    }
+  } //SLIDER + IMAGES
+  section {
+    .hp_img {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      text-align: center;
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+      div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        h2 {
+          size: 50px;
+          color: $color-pearl;
+        }
+        p {
+          font-size: 20px;
+          color: $color-pearl;
+        }
+      }
+    }
+  }
+}
+
+main {
+  display: block;
+  #about_us {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    div {
+      @include dark_text;
+      margin: 10% 10%;
+      text-align: center;
+    }
+  }
+  #destination_card {
+   display: block;
+    background-color: $color-navygrey;
+    margin: 10% 15%;
+    a {
+      text-decoration: none;
+      figcaption {
+        position: relative;
+        img {
+          @include max_image
+        }
+        div {
+          @include card_text;
+          position: absolute;
+          bottom: 50%;          
+          width: 100%;          
+          text-align: center;
+          h2 {
+            margin: 5% 0;
+          }
+          p {
+            //description of destination
+          }
+        }
+      }
+    }
+  }
+}
+
+#footer {
+
+  background-color: $color-beige;
+  display: block;
+  margin-top: 2em;
+}
+
+
+
+// DESTINATION PAGE
+
+#main_destination {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  article {
+    margin-top: 2%;
+    padding: 0 2%;
+    border-style: solid none none solid;
+    border-color: $color-navygrey;
+  }
+  #map {
+    height: 20em;
+    width: 100%;
+    padding: 4%;
+    border-style: none none none solid;
+    border-color: $color-navygrey;
+  }
+  section {
+    .gallery {
+      margin: 5px;
+      border: 1px solid $color-dark;
+      float: left;
+      width: 180px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

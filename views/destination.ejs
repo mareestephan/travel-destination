@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Destination</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/style.css" />
+
+</head>
+
+<body>
+    <header>
+
+        <nav>
+
+            <div id="nav_logo">
+                <!-- Insert logo or icon -->
+                <i></i>
+            </div>
+
+            <div>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/#about_us">About</a>
+                    </li>
+                    <li>
+                        <a href="/#footer">Contact</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+
+        <section>
+            <figcaption class="hp_img">
+                <img src="/images/vietnam/3.jpg" alt="">
+                <div>
+                    <h2>Vietnam</h2>
+                    <p>Appels en Pere</p>
+                </div>
+            </figcaption>
+        </section>
+
+    </header>
+
+    <main id="main_destination">
+
+
+        <article>
+            <!-- Write up -->
+            <h2>Vietnam, culture on the coast.</h2>
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
+                to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+                sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+                including versions of Lorem Ipsum.</p>
+
+
+        </article>
+
+        <section>
+            <!-- google API -->
+
+            <div id="map">
+
+            </div>
+
+        </section>
+
+        <section>
+            <figcaption>
+                <!-- gallery -->
+                <div class="gallery">
+                    <a target="_blank" href="/images/vietnam/2.jpeg">
+                        <img src="/images/vietnam/2.jpg" alt="Fjords" width="300" height="200">
+                    </a>
+
+                </div>
+
+                <div class="gallery">
+                    <a target="_blank" href="forest.jpg">
+                        <img src="/images/vietnam/3.jpg" alt="Forest" width="300" height="200">
+                    </a>
+
+                </div>
+
+                <div class="gallery">
+                    <a target="_blank" href="lights.jpg">
+                        <img src="/images/vietnam/4.jpeg" alt="Northern Lights" width="300" height="200">
+                    </a>
+
+                </div>
+
+                <div class="gallery">
+                    <a target="_blank" href="mountains.jpg">
+                        <img src="/images/vietnam/5.jpeg" alt="Mountains" width="300" height="200">
+                    </a>
+
+                </div>
+                <div class="gallery">
+                    <a target="_blank" href="mountains.jpg">
+                        <img src="/images/vietnam/7.jpeg" alt="Mountains" width="300" height="200">
+                    </a>
+
+                </div>
+
+
+            </figcaption>
+        </section>
+
+    </main>
+
+
+
+
+
+</body>
+<script>
+    var map;
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {
+                lat: 14.0583,
+                lng: 108.2772
+            },
+            zoom: 7
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYjwczyVJ5vjQAwGCgBfoecZ7o0k1nbuc&callback=initMap" async
+    defer></script>
+
+</html>
