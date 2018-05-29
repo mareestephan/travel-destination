@@ -51,11 +51,9 @@ app.post('/users', function (req, res) {
 
   var user = new Users();
 
-  user.username = req.body.username;
-  user.firstname = req.body.firstname;
-  user.lastname = req.body.lastname;
+  user.full_name = req.body.full_name;  
   user.email = req.body.email;
-  user.password = req.body.password;
+  
 
   user.save(function (error) {
     if (error)
@@ -68,6 +66,8 @@ app.post('/users', function (req, res) {
 
 
 });
+
+
 
 
 // catch 404 and forward to error handler
