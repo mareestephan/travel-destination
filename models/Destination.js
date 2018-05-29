@@ -1,10 +1,12 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var PostSchema = new Schema({
-    author: String,
-    content: String,
-    title: String
+var DestinationSchema = new Schema({
+    title: String,
+    write_up: String,
+    lat_long: String
 });
 
-module.exports = mongoose.model('Post', PostSchema);
+
+
+module.exports = mongoose.model('Destination', DestinationSchema);
