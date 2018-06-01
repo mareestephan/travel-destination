@@ -7,6 +7,7 @@ var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 var mongoose = require('mongoose');
 var Users = require('./models/Users');
+var Destinations = require('./models/Destinations');
 
 mongoose.connect('mongodb://stephan-travel:jk7890-jk7890@ds137600.mlab.com:37600/travel-destination');
 

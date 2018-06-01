@@ -5,23 +5,6 @@ var Users = require('../models/Users');
 
 
 
-router.get('/', function (req, res, next) {
-
-  Users.find({}, function (err, users) {
-    if (err) throw err;
-
-     let data = {
-       title: 'All posts',
-       users: users
-     }
-
-    res.render( '../views/users', data );   
-
-    
-  });
-
-
-});
 
 router.post('/', function (req, res, next) {
 
