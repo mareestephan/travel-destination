@@ -1,20 +1,16 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+var bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 var mongoose = require('mongoose');
-
-
-
-
-
 var Users = require('./models/Users');
 
 mongoose.connect('mongodb://stephan-travel:jk7890-jk7890@ds137600.mlab.com:37600/travel-destination');
 
-// var Schema = mongoose.Schema;
+var Schema = mongoose.Schema;
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -26,6 +22,11 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -46,26 +47,7 @@ app.use('/users', usersRouter);
 app.use('/destination', destinationRouter);
 app.use('/create', createRouter);
 
-app.post('/users', function (req, res) {
 
-
-  var user = new Users();
-
-  user.full_name = req.body.full_name;  
-  user.email = req.body.email;
-  
-
-  user.save(function (error) {
-    if (error)
-      res.send(error);
-
-    res.redirect('/')
-  });
-
-
-
-
-});
 
 
 

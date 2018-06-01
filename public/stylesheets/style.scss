@@ -5,22 +5,16 @@ $color-pearl: #f8f5ed;
 $color-beige: #C6C5B9;
 $color-rainyday: #62929E;
 $color-navygrey: #546A7B;
+$color-black: #000;
 //MIXIN
 @mixin max_image {
   max-height: 100%;
   max-width: 100%
 }
 
-@mixin card_text {
-  color: $color-white;
-}
-
-@mixin dark_text {
-  color: $color-dark;
-}
-
 body {
-  background-color: $color-beige;
+  margin: 0 0.65em;
+  background-color: $color-pearl;
   font-family: sans-serif;
   display: block;
 }
@@ -29,34 +23,45 @@ body {
 header {
   nav {
     margin-top: 1em;
-    position: fixed;
-    right: 0;
-    z-index: 100;
-    background: #C6C5B9;
-    opacity: 0.5;
-    ul {
-      li {
-        display: inline-block;
-        font-weight: 600;
-        font-size: 29px;
-        margin: 0 0.65em;
-        transition: 0.3s;
-        &:hover {
-          background: $color-rainyday;
-          opacity: 0.5;
+    position: fixed; // right: 0;
+    z-index: 100; // background: #C6C5B9;
+    // opacity: 0.5;
+    width: 100%;
+    #nav_logo {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      color: $color-white;
+      margin: 0 0.65em;
+    }
+    div {
+      position: absolute;
+      right: 0;
+      ul {
+        li {
+          display: inline-block;
+          font-weight: 600;
+          font-size: 29px;
+          margin: 0 0.65em;
+          box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+          transition: 0.3s;
+          &:hover {
+            // color: $color-rainyday;
+            // text-decoration: underline;
+            background-color: #474747;
+          }
         }
-      }
-      a {
-        color: $color-dark;
-        font-size: 0.85em;
-        text-decoration: none;
-        text-transform: uppercase;
-        padding: 0.5em;
-        transition: 0.3s;
-        &:hover {
-          color: $color-rainyday;
-          text-decoration: underline;
-          opacity: 0.1;
+        a {
+          color: $color-white;
+          font-size: 0.85em;
+          text-decoration: none;
+          text-transform: uppercase;
+          padding: 0.5em;
+          transition: 0.3s;
+          &:hover {
+            // color: $color-rainyday;
+            text-decoration: underline;
+          }
         }
       }
     }
@@ -78,33 +83,41 @@ header {
         left: 50%;
         transform: translate(-50%, -50%);
         h2 {
-          size: 50px;
-          color: $color-pearl;
+          font-size: 5vw;
+          color: $color-white;
         }
         p {
-          font-size: 20px;
-          color: $color-pearl;
+          font-size: 3vw;
+          color: $color-white;
         }
       }
     }
   }
 }
 
-main {
-  display: block;
-  #about_us {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    div {
-      @include dark_text;
-      margin: 10% 10%;
-      text-align: center;
+#about_us {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  div {
+    color: $color-black;
+    margin: 10% 10%;
+    text-align: center;
+    line-height: 1.5em;
+    h3 {
+      font-size: 3vw;
+      text-decoration: underline;
+      p {
+        font-size: 1.5vw;
+      }
     }
   }
-  #destination_card {
-   display: block;
-    background-color: $color-navygrey;
-    margin: 10% 15%;
+}
+
+main {
+  .destination_card {
+    margin: 15vh 20vw;
+    background-color: $color-black;
+    box-shadow: 0 4px 11px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
     a {
       text-decoration: none;
       figcaption {
@@ -112,17 +125,30 @@ main {
         img {
           @include max_image
         }
-        div {
-          @include card_text;
+        .card_text {
           position: absolute;
-          bottom: 50%;          
-          width: 100%;          
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
           text-align: center;
+          color: $color-white;
           h2 {
-            margin: 5% 0;
+            font-size: 4vw;
+            padding: 0 3vw;
           }
           p {
-            //description of destination
+            font-size: 2vw;
+            padding: 0 3vw;
+          }
+          div {
+            margin-top: 35%;
+            span {
+              padding: 0 3vw;
+              padding: 3vw;
+              border-radius: 5px 5px 5px;
+              border: 2px solid $color-pearl;
+              font-size: 2vw;
+            }
           }
         }
       }
@@ -131,16 +157,12 @@ main {
 }
 
 #footer {
-
   background-color: $color-beige;
   display: block;
-  margin-top: 2em;
+  margin: 2em 0;
 }
 
-
-
 // DESTINATION PAGE
-
 #main_destination {
   display: grid;
   grid-template-columns: 2fr 1fr;

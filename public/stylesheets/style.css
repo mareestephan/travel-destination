@@ -1,35 +1,41 @@
 body {
-  background-color: #C6C5B9;
+  margin: 0 0.65em;
+  background-color: #f8f5ed;
   font-family: sans-serif;
   display: block; }
 
 header nav {
   margin-top: 1em;
   position: fixed;
-  right: 0;
   z-index: 100;
-  background: #C6C5B9;
-  opacity: 0.5; }
-  header nav ul li {
+  width: 100%; }
+  header nav #nav_logo {
     display: inline-block;
-    font-weight: 600;
-    font-size: 29px;
-    margin: 0 0.65em;
-    transition: 0.3s; }
-    header nav ul li:hover {
-      background: #62929E;
-      opacity: 0.5; }
-  header nav ul a {
-    color: #393D3F;
-    font-size: 0.85em;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 0.5em;
-    transition: 0.3s; }
-    header nav ul a:hover {
-      color: #62929E;
-      text-decoration: underline;
-      opacity: 0.1; }
+    position: absolute;
+    left: 0;
+    color: #fff;
+    margin: 0 0.65em; }
+  header nav div {
+    position: absolute;
+    right: 0; }
+    header nav div ul li {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 29px;
+      margin: 0 0.65em;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+      transition: 0.3s; }
+      header nav div ul li:hover {
+        background-color: #474747; }
+    header nav div ul a {
+      color: #fff;
+      font-size: 0.85em;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 0.5em;
+      transition: 0.3s; }
+      header nav div ul a:hover {
+        text-decoration: underline; }
 header section .hp_img {
   position: relative;
   height: 100%;
@@ -45,45 +51,63 @@ header section .hp_img {
     left: 50%;
     transform: translate(-50%, -50%); }
     header section .hp_img div h2 {
-      size: 50px;
-      color: #f8f5ed; }
+      font-size: 5vw;
+      color: #fff; }
     header section .hp_img div p {
-      font-size: 20px;
-      color: #f8f5ed; }
+      font-size: 3vw;
+      color: #fff; }
 
-main {
-  display: block; }
-  main #about_us {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); }
-    main #about_us div {
-      color: #393D3F;
-      margin: 10% 10%;
-      text-align: center; }
-  main #destination_card {
-    display: block;
-    background-color: #546A7B;
-    margin: 10% 15%; }
-    main #destination_card a {
-      text-decoration: none; }
-      main #destination_card a figcaption {
-        position: relative; }
-        main #destination_card a figcaption img {
-          max-height: 100%;
-          max-width: 100%; }
-        main #destination_card a figcaption div {
-          color: #fff;
-          position: absolute;
-          bottom: 50%;
-          width: 100%;
-          text-align: center; }
-          main #destination_card a figcaption div h2 {
-            margin: 5% 0; }
+#about_us {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); }
+  #about_us div {
+    color: #000;
+    margin: 10% 10%;
+    text-align: center;
+    line-height: 1.5em; }
+    #about_us div h3 {
+      font-size: 3vw;
+      text-decoration: underline; }
+      #about_us div h3 p {
+        font-size: 1.5vw; }
+
+main .destination_card {
+  margin: 15vh 20vw;
+  background-color: #000;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24); }
+  main .destination_card a {
+    text-decoration: none; }
+    main .destination_card a figcaption {
+      position: relative; }
+      main .destination_card a figcaption img {
+        max-height: 100%;
+        max-width: 100%; }
+      main .destination_card a figcaption .card_text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #fff; }
+        main .destination_card a figcaption .card_text h2 {
+          font-size: 4vw;
+          padding: 0 3vw; }
+        main .destination_card a figcaption .card_text p {
+          font-size: 2vw;
+          padding: 0 3vw; }
+        main .destination_card a figcaption .card_text div {
+          margin-top: 35%; }
+          main .destination_card a figcaption .card_text div span {
+            padding: 0 3vw;
+            padding: 3vw;
+            border-radius: 5px 5px 5px;
+            border: 2px solid #f8f5ed;
+            font-size: 2vw; }
 
 #footer {
   background-color: #C6C5B9;
   display: block;
-  margin-top: 2em; }
+  margin: 2em 0; }
 
 #main_destination {
   display: grid;
