@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 
-<head>   
-<% include partials/head %>
+<head>
+    <% include partials/head %>
 </head>
 
 <body>
@@ -34,10 +34,14 @@
 
         <section>
             <figcaption class="hp_img">
-                <img src="/images/vietnam/3.jpg"  alt="">
+                <img src="/images/vietnam/3.jpg" alt="">
                 <div>
-                    <h2>Vietnam</h2>
-                    <p>Appels en Pere</p>
+                    <h2>
+                      Vietnam
+                    </h2>
+                    <p>
+                      kshjdfjhsdfkhsdgfkjshdfkjhsdfkjhsdfkjhsdfkjsdf
+                    </p>
                 </div>
             </figcaption>
         </section>
@@ -49,28 +53,29 @@
 
         <article>
             <!-- Write up -->
-            <h2>Vietnam, culture on the coast.</h2>
+            <h2>
+             <%= destinations %>
+            </h2>
 
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-                to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
-                including versions of Lorem Ipsum.</p>
-
-
-
-                <% for (user of users) { %>
-                       <p> <%= user.full_name %> </p>
+            <p>
+              appels 
+            </p>
 
 
 
 
-                <% } %>
-               
+            <p>
+              
+            </p>
 
 
-               
+
+
+
+
+
+
+
 
 
         </article>
@@ -132,14 +137,15 @@
 
 
 </body>
+
 <script>
     var map;
 
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
             center: {
-                lat: 14.0583,
-                lng: 108.2772
+                lat: 10,
+                lng: 23
             },
             zoom: 7
         });

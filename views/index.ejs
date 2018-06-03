@@ -50,10 +50,13 @@
 
       <figcaption class="hp_img">
 
-        <img src="/images/vietnam/8.jpg" alt="">
+        <img src="/images/hp.jpeg" alt="">
         <div>
           <h2>Sustainable Travel</h2>
-          <p>Experience it all, leaving no footprints</p>
+          <p>Experience it all.
+            <br> Leaving no footprints
+            <i class="fab fa-pagelines"></i>
+          </p>
         </div>
 
       </figcaption>
@@ -83,24 +86,38 @@
     </div>
     <div>
       <h3>Where?</h3>
-      <p>Lorem  five centuries, but also the leap into electronic typesetting, remaining essentially
-        unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
-        more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <p>Lorem five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised
+        in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+        publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
     </div>
 
   </article>
 
   <main>
 
+
+
+    <% for (destination of destinations) { %>
+
     <!-- IMAGE DESTINATION CARD -->
     <article class="destination_card">
-      <a href="destination">
+<a href="/destination" >
+
+        <span class="outline"></span>
 
         <figcaption>
+
+          <!-- THIS IMAGE NEEDS TO LOOP FROM THE DESTIANTION FILE OR DATABASE -->
           <img src="/images/vietnam/2.jpg" alt="">
           <div class="card_text">
-            <h2>Vietnam</h2>
-            <p>A coastal country oozing culture.</p>
+
+            <h2>
+              <%= destination.destination_name %>
+            </h2>
+            <p>
+              <%= destination.meta_description %>
+            </p>
+
             <div>
               <span>Be my Guest</span>
             </div>
@@ -113,8 +130,11 @@
       </a>
     </article>
 
-    <article class="destination_card">
+    <% } %>
+
+    <!-- <article class="destination_card">
       <a href="destination">
+        <span class="outline"></span>
 
         <figcaption>
           <img src="/images/india/1.jpg" alt="">
@@ -132,6 +152,7 @@
 
     <article class="destination_card">
       <a href="destination">
+        <span class="outline"></span>
 
         <figcaption>
           <img src="/images/vietnam/7.jpeg" alt="">
@@ -145,7 +166,7 @@
         </figcaption>
 
       </a>
-    </article>
+    </article> -->
 
   </main>
 
@@ -155,7 +176,7 @@
       <i></i>
     </div>
     <div>
-      <h3>Dreams are meant to be experienced.</h3>
+      <h3>Dont miss out on your next dream coming true.</h3>
     </div>
 
     <div>
@@ -174,7 +195,7 @@
 
     </div>
 
-    
+
 
 
 

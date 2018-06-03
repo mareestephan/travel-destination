@@ -15,14 +15,16 @@ mongoose.connect('mongodb://stephan-travel:jk7890-jk7890@ds137600.mlab.com:37600
 // });
 
 
+// ========= populates destination with information from MLAB =======
+
 router.get('/', function (req, res, next) {
 
-    Users.find({}, function (err, users) {
+    Destinations.find({}, function (err, destinations) {
         if (err) throw err;
 
         let data = {
             title: 'All posts',
-            users: users
+            destinations: destinations
         }
 
         res.render('../views/destination', data);
@@ -33,12 +35,19 @@ router.get('/', function (req, res, next) {
 
 });
 
+
+
+
 router.post('/', function (req, res, next) {
 
     var destination = new Destinations();
 
     destination.destination_name = req.body.destination_name;
     destination.meta_description = req.body.meta_description;
+    destination.write_up_header = req.body.write_up_header;
+    destination.write_up = req.body.write_up;
+    destination.longitude = req.body.longitude;
+    destination.latitude = req.body.latitude;
 
     destination.save(function (error) {
         if (error)
@@ -48,6 +57,7 @@ router.post('/', function (req, res, next) {
     });
 });
 
+
   
 
 module.exports = router;
@@ -56,3 +66,4 @@ module.exports = router;
 // when click on anchor. send id 
 //retrieve id (findById)
 //populate with ID.req.pram
+

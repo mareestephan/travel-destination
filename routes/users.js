@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 var Users = require('../models/Users');
 
 
-
+//  ======= this code send info to mlab ======
 
 router.post('/', function (req, res, next) {
 
@@ -23,21 +23,8 @@ router.post('/', function (req, res, next) {
 
 
 
-  // Users.find({}, function (err, users){
 
-  //     if (err)
-  //       res.send(err);
-
-  //     let data = {
-
-  //       users : users
-  //     }
-
-  //   res.render('/destination', data)
-
-  // });
-
-  // ====== This shows jason data on page ======
+  // ====== This shows json data on page ======
 
   //  Users.find({}, function (err, users) {
   //    if (err) throw err;
@@ -46,6 +33,26 @@ router.post('/', function (req, res, next) {
 
 
   //  });
+
+  // ========== renders the users from MLAB =======
+
+  // router.get('/', function (req, res, next) {
+
+  //     Users.find({}, function (err, users) {
+  //         if (err) throw err;
+
+  //         let data = {
+  //             title: 'All posts',
+  //             users: users
+  //         }
+
+  //         res.render('../views/destination', data);
+
+
+  //     });
+
+
+  // });
 
 
 
