@@ -17,6 +17,8 @@ mongoose.connect('mongodb://stephan-travel:jk7890-jk7890@ds137600.mlab.com:37600
 
 // ========= populates destination with information from MLAB =======
 
+
+
 router.get('/', function (req, res, next) {
 
     Destinations.find({}, function (err, destinations) {
@@ -35,6 +37,7 @@ router.get('/', function (req, res, next) {
 
 });
 
+//===========try to findById === =========
 
 
 

@@ -18,12 +18,21 @@ router.get('/', function (req, res, next) {
     let data = {
       title: 'Sustainable Travel',
       destinations: destinations
+
+      
     }
+
+    
+
+    
+
+
 
     res.render('../views/', data);
 
 
   });
+
 
 
 });

@@ -100,37 +100,27 @@
     <% for (destination of destinations) { %>
 
     <!-- IMAGE DESTINATION CARD -->
-    <article class="destination_card">
-<a href="/destination" >
-
-        <span class="outline"></span>
-
-        <figcaption>
-
-          <!-- THIS IMAGE NEEDS TO LOOP FROM THE DESTIANTION FILE OR DATABASE -->
-          <img src="/images/vietnam/2.jpg" alt="">
-          <div class="card_text">
-
-            <h2>
-              <%= destination.destination_name %>
-            </h2>
-            <p>
-              <%= destination.meta_description %>
-            </p>
-
-            <div>
-              <span>Be my Guest</span>
-            </div>
-
-
+  <article class="destination_card">
+    <a href='destination?id= <%= destination._id %>'>
+      <span class="outline"></span>
+      <figcaption>
+        <!-- THIS IMAGE NEEDS TO LOOP FROM THE DESTIANTION FILE OR DATABASE -->
+        <img src="/images/vietnam/2.jpg" alt="">
+        <div class="card_text">
+          <h2>
+            <%= destination.destination_name %>
+          </h2>
+          <p>
+            <%= destination.meta_description %>
+          </p>
+          <div>
+            <span>Be my Guest</span>
           </div>
-
-        </figcaption>
-
-      </a>
-    </article>
-
-    <% } %>
+        </div>
+      </figcaption>
+    </a>
+  </article>
+  <% } %>
 
     <!-- <article class="destination_card">
       <a href="destination">
