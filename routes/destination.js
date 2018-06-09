@@ -19,28 +19,53 @@ mongoose.connect('mongodb://stephan-travel:jk7890-jk7890@ds137600.mlab.com:37600
 
 
 
-router.get('/', function (req, res, next) {
+// router.get('/', function (req, res, next) {
 
-    Destinations.find({}, function (err, destinations) {
-        if (err) throw err;
+//     Destinations.find({}, function (err, destinations) {
+//         if (err) throw err;
 
-        let data = {
-            title: 'All posts',
-            destinations: destinations
+//         let data = {
+//             title: 'All posts',
+//             destinations: destinations
+//         }
+
+//         res.render('../views/destination', data);
+
+
+//     });
+
+
+// });
+
+//===========findById === =========
+
+router.get('/:id', function (req, res, next){
+
+    let id = req.params.id;
+
+    Destinations.findById(id, function (err, destinations) {
+        if (err) {
+            res.send(err);
+        } else {
+
+                    let data = {
+                        title: 'All posts',
+                        destinations: destinations
+                    }
+
+                    res.render('../views/destination', data);
+
         }
-
-        res.render('../views/destination', data);
-
-
     });
-
 
 });
 
-//===========try to findById === =========
 
 
 
+
+
+//========post to mlab DB =========
 router.post('/', function (req, res, next) {
 
     var destination = new Destinations();

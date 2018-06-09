@@ -37,10 +37,10 @@
                 <img src="/images/vietnam/3.jpg" alt="">
                 <div>
                     <h2>
-                      Vietnam
+                        <%= destinations.destination_name %>
                     </h2>
                     <p>
-                      kshjdfjhsdfkhsdgfkjshdfkjhsdfkjhsdfkjhsdfkjsdf
+                        <%= destinations.meta_description%>
                     </p>
                 </div>
             </figcaption>
@@ -54,28 +54,13 @@
         <article>
             <!-- Write up -->
             <h2>
-             <%= destinations %>
+                <%= destinations.write_up_header %>
+
             </h2>
 
             <p>
-              appels 
+                <%= destinations.write_up %>
             </p>
-
-
-
-
-            <p>
-              
-            </p>
-
-
-
-
-
-
-
-
-
 
 
         </article>
@@ -139,14 +124,14 @@
 </body>
 
 <script>
+    var longitude = <%= destinations.longitude %>;
+    
+    var latitude = <%= destinations.latitude %>;
+    
     var map;
-
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-            center: {
-                lat: 10,
-                lng: 23
-            },
+            center: { lat: latitude, lng: longitude},
             zoom: 7
         });
     }
