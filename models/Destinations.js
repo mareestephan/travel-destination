@@ -7,7 +7,9 @@ var DestinationsSchema = new Schema({
     write_up_header: String,
     write_up: String,
     longitude: Number,
-    latitude: Number
+    latitude: Number,
+    uploaded_file: String
+
 
 });
 

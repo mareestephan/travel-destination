@@ -76,13 +76,32 @@ router.post('/', function (req, res, next) {
     destination.write_up = req.body.write_up;
     destination.longitude = req.body.longitude;
     destination.latitude = req.body.latitude;
+    destination.uploaded_file = req.files.uploaded_file.name;
 
     destination.save(function (error) {
         if (error)
             res.send(error);
 
-        res.redirect('/')
+        
     });
+     if (req.files) {
+
+         let uploaded_image = req.files.uploaded_file;
+
+         uploaded_image.mv('./public/images/' + uploaded_image.name, function (err) {
+
+             if (err)
+                 return res.status(500).send(err);
+
+            //  res.send('uploaded');
+             console.log('file uploaded bra');
+             res.redirect('/')
+         });
+
+     } else {
+         res.send('files not present')
+
+     }
 });
 
 

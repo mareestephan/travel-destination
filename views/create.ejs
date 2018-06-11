@@ -11,7 +11,7 @@
     <h2>Create a new destination</h2>
 
 
-    <form action="/destination" method="POST">
+    <form   enctype="multipart/form-data" action="/destination" method="POST">
 
         <label for="destination_name">Destination Name</label>
         <input type="text" name="destination_name" placeholder="Destination Name">
@@ -39,6 +39,9 @@
         <input type="text" name="latitude" placeholder="Destinations latitude">
 
         <hr>
+
+        <input type="file" name="uploaded_file">
+        
 
 
 
