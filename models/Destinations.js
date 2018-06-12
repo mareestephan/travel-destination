@@ -8,8 +8,12 @@ var DestinationsSchema = new Schema({
     write_up: String,
     longitude: Number,
     latitude: Number,
-    uploaded_file: String
-
+    uploaded_file: String,
+    uploaded_file2: String,
+    uploaded_file3: String,
+    uploaded_file4: String,
+    uploaded_file5: String
+    
 
 });
 
