@@ -6,15 +6,15 @@ $color-beige: #C6C5B9;
 $color-rainyday: #62929E;
 $color-navygrey: #546A7B;
 $color-black: #000;
-
+$color-yellow: #FFC91E;
+$color-blue: #3891A6;
 //MIXIN
 @mixin max_image {
   max-height: 100%;
-  max-width: 100%
+  max-width: 100%;
 }
 
 body {
-  margin: 0 0.65em;
   background-color: $color-pearl;
   font-family: sans-serif;
   display: block;
@@ -22,48 +22,43 @@ body {
 
 //NAVBAR ++++ SLIDER IMAGES
 header {
-  nav {
-    margin-top: 1em;
-    position: fixed; // right: 0;
-    z-index: 100; // background: #C6C5B9;
-    // opacity: 0.5;
-    width: 100%;
-        #nav_logo {
-          display: inline-block;
-          position: absolute;
-          left: 0;
-          color: $color-white;
-          margin: 0 0.65em;
-        }
-        div {
-          position: absolute;
-          right: 0;
-          ul {
-            li {
-              background-color: $color-rainyday;
-              display: inline-block;
-              font-weight: 600;
-              font-size: 29px;
-              margin: 0 0.65em;
-              box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-              
-            }
-            a {
-              color: $color-white;
-              font-size: 0.85em;
-              text-decoration: none;
-              text-transform: uppercase;
-              padding: 0.5em;
-              transition: 0.3s;
-              &:hover {
-                
-                text-decoration: underline;
-              }
-            }
-          }
-        }
-  } 
-  
+ nav {
+   position: fixed;
+   width: 100%;
+   z-index: 100;
+
+
+    .logo {
+      position: fixed;
+      float: left;
+      margin: 16px 36px;
+      color: $color-pearl;
+      font-weight: bold;
+      font-size: 24px;
+
+
+   }
+   ul {
+     list-style: none;
+     background: rgba(0, 0, 0, 0);
+     overflow:hidden;
+     color: $color-pearl;
+     text-align: center;
+     margin: 0;
+     transition: 1s;
+       li {
+         display: inline-block;
+         padding: 20px;
+           a{
+             text-decoration: none;
+             color:$color-pearl;
+             font-size: 20px;
+           }
+
+       }
+         
+   }
+ }
   //SLIDER + IMAGES
   section {
     .hp_img {
@@ -75,7 +70,6 @@ header {
       img {
         max-height: 100vh;
         max-width: 99vw;
-        
       }
       div {
         position: absolute;
@@ -166,8 +160,6 @@ main {
   }
 }
 
-
-
 // DESTINATION PAGE
 #main_destination {
   display: grid;
@@ -199,12 +191,28 @@ main {
   }
 }
 
-#footer {
+footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   color: $color-pearl;
-
-  height: 20vh;
-  width: 100%;
+  height: 30vh;
+  width: 100vw;
   background-color: $color-dark;
-  display: block;
   margin: 0 0;
+    #social-media-btns {
+     
+      text-align: center;      
+        i {
+        padding: 2vh 2vw;
+      }
+    }
+
+    form {
+
+      padding: 3vh 3vw;
+
+      label {
+        text-align: center;
+      }
+    }
 }

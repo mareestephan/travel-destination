@@ -1,39 +1,34 @@
 body {
-  margin: 0 0.65em;
   background-color: #f8f5ed;
   font-family: sans-serif;
   display: block; }
 
 header nav {
-  margin-top: 1em;
   position: fixed;
-  z-index: 100;
-  width: 100%; }
-  header nav #nav_logo {
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    color: #fff;
-    margin: 0 0.65em; }
-  header nav div {
-    position: absolute;
-    right: 0; }
-    header nav div ul li {
-      background-color: #62929E;
+  width: 100%;
+  z-index: 100; }
+  header nav .logo {
+    position: fixed;
+    float: left;
+    margin: 16px 36px;
+    color: #f8f5ed;
+    font-weight: bold;
+    font-size: 24px; }
+  header nav ul {
+    list-style: none;
+    background: transparent;
+    overflow: hidden;
+    color: #f8f5ed;
+    text-align: center;
+    margin: 0;
+    transition: 1s; }
+    header nav ul li {
       display: inline-block;
-      font-weight: 600;
-      font-size: 29px;
-      margin: 0 0.65em;
-      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24); }
-    header nav div ul a {
-      color: #fff;
-      font-size: 0.85em;
-      text-decoration: none;
-      text-transform: uppercase;
-      padding: 0.5em;
-      transition: 0.3s; }
-      header nav div ul a:hover {
-        text-decoration: underline; }
+      padding: 20px; }
+      header nav ul li a {
+        text-decoration: none;
+        color: #f8f5ed;
+        font-size: 20px; }
 header section .hp_img {
   position: relative;
   height: 100vh;
@@ -134,12 +129,21 @@ main .destination_card {
       width: 100%;
       height: auto; }
 
-#footer {
+footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   color: #f8f5ed;
-  height: 20vh;
-  width: 100%;
+  height: 30vh;
+  width: 100vw;
   background-color: #393D3F;
-  display: block;
   margin: 0 0; }
+  footer #social-media-btns {
+    text-align: center; }
+    footer #social-media-btns i {
+      padding: 2vh 2vw; }
+  footer form {
+    padding: 3vh 3vw; }
+    footer form label {
+      text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

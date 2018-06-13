@@ -4,53 +4,31 @@
 <head>
   <% include partials/head %>
 </head>
-
 <body>
-
   <!-- HEADER includes: navbar + slider -->
 
   <header>
-
     <nav>
-
-      <div id="nav_logo">
-        <!-- Insert logo or icon -->
-        <i>
-          <i class="fas fa-plane fa-3x"></i>
-        </i>
+      <div class="menu-icon">
+        <i class="fa fa-bars fa-2x"></i>
       </div>
-
-
-      <div>
+      <div id="logo"> 
+        logo
+      </div>
+      <div class="menu ">
         <ul>
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="#about_us">About</a>
-          </li>
-
-          <li>
-            <a href="">Contact</a>
-          </li>
-
-
+          <li><a href="">Home</a></li>
+          <li><a href="">About</a></li>
+            <li><a href="">Contact Us</a></li>
+          <li><a href="">Gallery</a></li>
         </ul>
-
       </div>
-      <!-- Here I have effect 14 navbar effects -->
     </nav>
 
-
-    <!-- Slider and text -->
-
+    <!-- Homepage image with text -->
     <section>
-
-
-
       <figcaption class="hp_img">
-
-        <img src="/images/hp.jpeg" alt="">
+        <img src="/images/homepage.jpeg" alt="green rice fields">
         <div>
           <h2>Sustainable Travel</h2>
           <p>Experience it all.
@@ -58,9 +36,7 @@
             <i class="fab fa-pagelines"></i>
           </p>
         </div>
-
       </figcaption>
-
     </section>
 
   </header>
@@ -73,76 +49,68 @@
 
     <div>
       <h3>Who?</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-        dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-        book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-        unchanged. It was Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <p>Sustainable Travel started in 2010 as an initiative to uplift communities and preserve exotic destinations. Tourism allows these communities to grow and live better lives. However, we did see the tourism industry does not follow a very eco-concious model and we have started to change that.  </p>
     </div>
     <div>
       <h3>What?</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-        dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-        book. It has survived re like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<p>Travel with a difference - Our guests enjoy world-class standards without affecting immediate communities or the surrounding
+  environment.  By embracing our natural surroundings and working alongside the immediate communities, we reduce not only our carbon footprints but also uplift the native residents in the areas.</p>
     </div>
     <div>
       <h3>Where?</h3>
-      <p>Lorem five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised
-        in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-        publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<p>We specialize in exotic/tropical destinations. Give back to the environment and local communities by checking into our eco-resorts
+  in Vietnam, India and Sri Lanka. We scout rural and isolated locations in exotic destinations.
+  Being able to enjoy a luxurious holiday and simultaneously uplifting a community is a wonderful experience. </p>
     </div>
 
   </article>
 
   <main>
-
-
-
     <% for (destination of destinations) { %>
-
-    <!-- IMAGE DESTINATION CARD -->
-  <article class="destination_card">
-    <a href='destination/<%= destination._id %>'>
-      <span class="outline"></span>
-      <figcaption>
-        <!-- THIS IMAGE NEEDS TO LOOP FROM THE DESTIANTION FILE OR DATABASE -->
-        <img src="/images/vietnam/2.jpg" alt="">
-        <div class="card_text">
-          <h2>
-            <%= destination.destination_name %>
-          </h2>
-          <p>
-            <%= destination.meta_description %>
-          </p>
-          <div>
-            <span>Be my Guest</span>
-          </div>
-        </div>
-      </figcaption>
-    </a>
-  </article>
-  <% } %>
-
-  
-
+      <!-- IMAGE DESTINATION CARD -->
+      <article class="destination_card">
+        <a href='destination/<%= destination._id %>'>
+          <span class="outline"></span>
+          <figcaption>
+            <!-- THIS IMAGE NEEDS TO LOOP FROM THE DESTIANTION FILE OR DATABASE -->
+            <img src="/images/<%= destination.uploaded_file %>" alt="">
+            <div class="card_text">
+              <h2>
+                <%= destination.destination_name %>
+              </h2>
+              <p>
+                <%= destination.meta_description %>
+              </p>
+              <div>
+                <span>Be my Guest</span>
+              </div>
+            </div>
+          </figcaption>
+        </a>
+      </article>
+      <% } %>
   </main>
 
-  <footer id="footer">
+  <footer >
 
-    <div>
-      <i></i>
-    </div>
-    <div>
-      <h3>Dont miss out on your next dream coming true.</h3>
+
+    <div id="social-media-btns">
+      <h3>Follow us around the world.</h3>
+      <i class="fab fa-facebook-f fa-2x"></i>
+      <i class="fab fa-instagram fa-2x"></i>
+      <i class="fab fa-twitter fa-2x"></i>
     </div>
 
-    <div>
+    <div class="wrapper">
       <form action="/users" method="POST">
 
         <label for="full_name">Full Name</label>
         <input type="text" name="full_name" placeholder="Full Name">
+        <p></p>
 
         <label for="Email">Email</label>
         <input type="email" name="email" placeholder="Email">
+        <p></p>
 
 
         <button type="submit">Submit</button>
@@ -150,11 +118,6 @@
 
 
     </div>
-
-
-
-
-
 
 
   </footer>

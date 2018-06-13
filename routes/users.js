@@ -36,23 +36,23 @@ router.post('/', function (req, res, next) {
 
   // ========== renders the users from MLAB =======
 
-  // router.get('/', function (req, res, next) {
+  router.get('/', function (req, res, next) {
 
-  //     Users.find({}, function (err, users) {
-  //         if (err) throw err;
+      Users.find({}, function (err, users) {
+          if (err) throw err;
 
-  //         let data = {
-  //             title: 'All posts',
-  //             users: users
-  //         }
+          let data = {
+              title: 'All posts',
+              users: users
+          }
 
-  //         res.render('../views/destination', data);
-
-
-  //     });
+          res.render('../views/users', data);
 
 
-  // });
+      });
+
+
+  });
 
 
 
