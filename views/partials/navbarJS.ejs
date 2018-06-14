@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#menu-icon").on("click", function () {
+            $("nav ul").toggleClass("showing");
+        });
+    });
+
+
+
+    $(window).on("scroll", function () {
+        if ($(window).scrollTop()) {
+            $('nav').addClass('black');
+        } else {
+            $('nav').removeClass('black');
+        }
+    })
+
+
+    // Scroll down fade away ====== Scroll up appear again
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos >
+            currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+        } else {
+            document.getElementById("navbar").style.top = "-50px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>

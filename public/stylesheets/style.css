@@ -7,7 +7,7 @@ header nav {
   position: fixed;
   width: 100%;
   z-index: 100;
-  transition: top 0.8s;
+  transition: top 0.5s;
   background: #f8f5ed; }
   header nav #menu-icon {
     width: 100%;
@@ -77,7 +77,7 @@ header nav {
 
 main .destination_card {
   position: relative;
-  height: 70%;
+  height: 65%;
   width: 80vw;
   overflow: hidden;
   margin: 15vh 10vw;

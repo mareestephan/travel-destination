@@ -10,7 +10,7 @@
 
       
 
-<nav>
+<nav id="navbar">
 
     <% include partials/navbar %>
 
@@ -102,8 +102,13 @@
 
 
 </body>
+<% include partials/navbarJS %>
 
 <script>
+
+    
+
+
     var longitude = <%= destinations.longitude %>;
 
     var latitude = <%= destinations.latitude %>;
