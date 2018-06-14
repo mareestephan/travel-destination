@@ -6,28 +6,30 @@ body {
 header nav {
   position: fixed;
   width: 100%;
-  z-index: 100; }
+  z-index: 100;
+  transition: top 0.8s;
+  background: #f8f5ed; }
   header nav #menu-icon {
     width: 100%;
-    background: #393D3F;
+    background: #f8f5ed;
     text-align: right;
     box-sizing: border-box;
     padding: 15px 24px;
     cursor: pointer;
-    color: #f8f5ed;
+    color: #393D3F;
     display: none; }
   header nav #logo {
     position: fixed;
     float: left;
     margin: 16px 36px;
-    color: #f8f5ed;
+    color: #393D3F;
     font-weight: bold;
     font-size: 24px; }
   header nav .black {
-    background: #393D3F; }
+    background: #f8f5ed; }
   header nav ul {
     list-style: none;
-    background: transparent;
+    background: #f8f5ed;
     overflow: hidden;
     color: #f8f5ed;
     padding: 0;
@@ -39,7 +41,7 @@ header nav {
       padding: 20px; }
       header nav ul li a {
         text-decoration: none;
-        color: #f8f5ed;
+        color: #393D3F;
         font-size: 20px; }
 @media screen and (max-width: 580px) {
   header nav #menu-icon {
@@ -52,7 +54,7 @@ header nav {
     max-height: 20em; }
   header nav ul {
     max-height: 0px;
-    background: #393D3F; }
+    background: #f8f5ed; }
     header nav ul li {
       box-sizing: border-box;
       width: 100%;
@@ -75,12 +77,15 @@ header nav {
 
 main .destination_card {
   position: relative;
-  height: 70vh;
+  height: 70%;
   width: 80vw;
   overflow: hidden;
   margin: 15vh 10vw;
   background-color: #000;
   box-shadow: 0 4px 11px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24); }
+  main .destination_card img {
+    max-height: 100%;
+    max-width: 100%; }
   main .destination_card .outline {
     position: absolute;
     z-index: 70;
@@ -93,12 +98,9 @@ main .destination_card {
     text-decoration: none; }
     main .destination_card a figcaption {
       position: relative; }
-      main .destination_card a figcaption img {
-        max-height: 100%;
-        max-width: 100%; }
       main .destination_card a figcaption .card_text {
         position: absolute;
-        top: 25%;
+        top: 20%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
@@ -111,10 +113,10 @@ main .destination_card {
           padding: 0 3vw;
           margin-bottom: 20vh; }
       main .destination_card a figcaption div {
-        margin: 7vh 0;
+        margin: 3% 0;
         color: #f8f5ed;
         position: absolute;
-        bottom: 25%;
+        bottom: 35%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center; }

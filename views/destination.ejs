@@ -8,32 +8,17 @@
 <body>
     <header>
 
-        <nav>
+      
 
-            <div id="nav_logo">
-                <!-- Insert logo or icon -->
-                <i></i>
-            </div>
+<nav>
 
-            <div>
-                <ul>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/#about_us">About</a>
-                    </li>
-                    <li>
-                        <a href="/#footer">Contact</a>
-                    </li>
-                </ul>
+    <% include partials/navbar %>
 
-            </div>
-
-        </nav>
+</nav>
+      
 
         <section>
-            <figcaption id="hp-img">
+            <figcaption class="hp-img">
                 <img src='/images/<%= destinations.uploaded_file %>' alt="">
                 <div>
                     <h2>

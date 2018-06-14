@@ -9,29 +9,10 @@
   <!-- HEADER includes: navbar + slider -->
 
   <header>
-    <nav>
-      <div id="menu-icon">
-        <i class="fa fa-bars fa-2x"></i>
-      </div>
-      <div id="logo">
-        <i class="fas fa-plane"></i>
-      </div>
-      <div class="menu ">
-        <ul>
-          <li>
-            <a href="">Home</a>
-          </li>
-          <li>
-            <a href="">About</a>
-          </li>
-          <li>
-            <a href="">Contact Us</a>
-          </li>
-          <li>
-            <a href="">Gallery</a>
-          </li>
-        </ul>
-      </div>
+    <nav id="navbar">
+
+      <% include partials/navbar %>
+
     </nav>
 
     <!-- Homepage image with text -->
@@ -137,7 +118,8 @@
 
 </body>
 <script type="text/javascript">
-  // Menu-toggle button
+  
+
 
   $(document).ready(function () {
     $("#menu-icon").on("click", function () {
@@ -145,7 +127,7 @@
     });
   });
 
-  // Scrolling Effect
+  
 
   $(window).on("scroll", function () {
     if ($(window).scrollTop()) {
@@ -154,6 +136,20 @@
       $('nav').removeClass('black');
     }
   })
+
+ 
+     // Scroll down fade away ====== Scroll up appear again
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos >
+      currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
 </script>
 
 </html>
