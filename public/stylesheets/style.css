@@ -7,18 +7,30 @@ header nav {
   position: fixed;
   width: 100%;
   z-index: 100; }
-  header nav .logo {
+  header nav #menu-icon {
+    width: 100%;
+    background: #393D3F;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    cursor: pointer;
+    color: #f8f5ed;
+    display: none; }
+  header nav #logo {
     position: fixed;
     float: left;
     margin: 16px 36px;
     color: #f8f5ed;
     font-weight: bold;
     font-size: 24px; }
+  header nav .black {
+    background: #393D3F; }
   header nav ul {
     list-style: none;
     background: transparent;
     overflow: hidden;
     color: #f8f5ed;
+    padding: 0;
     text-align: center;
     margin: 0;
     transition: 1s; }
@@ -29,26 +41,23 @@ header nav {
         text-decoration: none;
         color: #f8f5ed;
         font-size: 20px; }
-header section .hp_img {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  margin: 0;
-  text-align: center; }
-  header section .hp_img img {
-    max-height: 100vh;
-    max-width: 99vw; }
-  header section .hp_img div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-    header section .hp_img div h2 {
-      font-size: 5vw;
-      color: #fff; }
-    header section .hp_img div p {
-      font-size: 3vw;
-      color: #fff; }
+@media screen and (max-width: 580px) {
+  header nav #menu-icon {
+    display: block; }
+  header nav #logo {
+    position: fixed;
+    top: 0;
+    margin-top: 16px; }
+  header nav .showing {
+    max-height: 20em; }
+  header nav ul {
+    max-height: 0px;
+    background: #393D3F; }
+    header nav ul li {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 24px 0;
+      text-align: center; } }
 
 #about_us {
   display: grid;
@@ -66,7 +75,10 @@ header section .hp_img {
 
 main .destination_card {
   position: relative;
-  margin: 15vh 15vw;
+  height: 70vh;
+  width: 80vw;
+  overflow: hidden;
+  margin: 15vh 10vw;
   background-color: #000;
   box-shadow: 0 4px 11px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24); }
   main .destination_card .outline {
@@ -86,7 +98,7 @@ main .destination_card {
         max-width: 100%; }
       main .destination_card a figcaption .card_text {
         position: absolute;
-        top: 50%;
+        top: 25%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
@@ -96,15 +108,42 @@ main .destination_card {
           padding: 0 3vw; }
         main .destination_card a figcaption .card_text p {
           font-size: 2vw;
-          padding: 0 3vw; }
-        main .destination_card a figcaption .card_text div {
-          margin-top: 35%; }
-          main .destination_card a figcaption .card_text div span {
-            padding: 0 3vw;
-            padding: 3vw;
-            border-radius: 5px 5px 5px;
-            border: 2px solid #f8f5ed;
-            font-size: 2vw; }
+          padding: 0 3vw;
+          margin-bottom: 20vh; }
+      main .destination_card a figcaption div {
+        margin: 7vh 0;
+        color: #f8f5ed;
+        position: absolute;
+        bottom: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center; }
+        main .destination_card a figcaption div span {
+          padding: 3vw;
+          border-radius: 5px 5px 5px;
+          border: 2px solid #f8f5ed;
+          font-size: 2vw; }
+
+section .hp-img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  text-align: center; }
+  section .hp-img img {
+    max-height: 100%;
+    max-width: 100%; }
+  section .hp-img div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    section .hp-img div h2 {
+      font-size: 5vw;
+      color: #fff; }
+    section .hp-img div p {
+      font-size: 3vw;
+      color: #fff; }
 
 #main_destination {
   display: grid;

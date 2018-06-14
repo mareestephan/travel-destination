@@ -26,23 +26,38 @@ header {
    position: fixed;
    width: 100%;
    z-index: 100;
+  //  background: $color-dark;
 
+    #menu-icon{
+      width: 100%;
+      background: $color-dark;
+      text-align: right;
+      box-sizing: border-box;
+      padding: 15px 24px;
+      cursor: pointer;
+      color: $color-pearl;
+      display:none;
 
-    .logo {
+    }
+
+    #logo {
       position: fixed;
       float: left;
       margin: 16px 36px;
       color: $color-pearl;
       font-weight: bold;
       font-size: 24px;
-
-
    }
+   .black{
+     background: $color-dark;
+   }
+
    ul {
      list-style: none;
      background: rgba(0, 0, 0, 0);
      overflow:hidden;
      color: $color-pearl;
+     padding: 0;
      text-align: center;
      margin: 0;
      transition: 1s;
@@ -59,34 +74,35 @@ header {
          
    }
  }
-  //SLIDER + IMAGES
-  section {
-    .hp_img {
-      position: relative;
-      height: 100vh;
-      width: 100%;
-      margin: 0;
-      text-align: center;
-      img {
-        max-height: 100vh;
-        max-width: 99vw;
-      }
-      div {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        h2 {
-          font-size: 5vw;
-          color: $color-white;
-        }
-        p {
-          font-size: 3vw;
-          color: $color-white;
-        }
-      }
-    }
-  }
+ // ========= MEDIA QUERY ==========
+ @media screen and (max-width: 580px) {
+   nav {
+     #menu-icon {
+       display: block;
+     }
+     #logo {
+       position: fixed;
+       top: 0;
+       margin-top: 16px;
+     }
+     .showing {
+       max-height: 20em;
+     }
+     ul {
+       max-height: 0px;
+       background: $color-dark;
+       
+       li {
+         box-sizing: border-box;
+         width: 100%;
+         padding: 24px 0;
+         text-align: center;
+       }
+     }
+   }
+ }
+  
+ 
 }
 
 #about_us {
@@ -110,7 +126,12 @@ header {
 main {
   .destination_card {
     position: relative;
-    margin: 15vh 15vw;
+    height: 70vh;
+    width: 80vw;
+    overflow: hidden;
+    margin: 15vh 10vw;
+   
+    
     background-color: $color-black;
     box-shadow: 0 4px 11px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
     .outline {
@@ -131,7 +152,7 @@ main {
         }
         .card_text {
           position: absolute;
-          top: 50%;
+          top: 25%;
           left: 50%;
           transform: translate(-50%, -50%);
           text-align: center;
@@ -143,16 +164,24 @@ main {
           p {
             font-size: 2vw;
             padding: 0 3vw;
+            margin-bottom: 20vh;
           }
-          div {
-            margin-top: 35%;
-            span {
-              padding: 0 3vw;
-              padding: 3vw;
-              border-radius: 5px 5px 5px;
-              border: 2px solid $color-pearl;
-              font-size: 2vw;
-            }
+          
+        }
+
+        div {
+          margin: 7vh 0;
+          color: $color-pearl;
+          position: absolute;
+          bottom: 25%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          span {
+            padding: 3vw;
+            border-radius: 5px 5px 5px;
+            border: 2px solid $color-pearl;
+            font-size: 2vw;
           }
         }
       }
@@ -161,6 +190,33 @@ main {
 }
 
 // DESTINATION PAGE
+ section {
+   .hp-img {
+     position: relative;
+     height: 100%;
+     width: 100%;
+     margin: 0;
+     text-align: center;
+     img {
+       @include max_image
+      
+     }
+     div {
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+       h2 {
+         font-size: 5vw;
+         color: $color-white;
+       }
+       p {
+         font-size: 3vw;
+         color: $color-white;
+       }
+     }
+   }
+ }
 #main_destination {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -216,3 +272,4 @@ footer {
       }
     }
 }
+

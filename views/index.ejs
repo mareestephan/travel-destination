@@ -4,30 +4,39 @@
 <head>
   <% include partials/head %>
 </head>
+
 <body>
   <!-- HEADER includes: navbar + slider -->
 
   <header>
     <nav>
-      <div class="menu-icon">
+      <div id="menu-icon">
         <i class="fa fa-bars fa-2x"></i>
       </div>
-      <div id="logo"> 
-        logo
+      <div id="logo">
+        <i class="fas fa-plane"></i>
       </div>
       <div class="menu ">
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">About</a></li>
-            <li><a href="">Contact Us</a></li>
-          <li><a href="">Gallery</a></li>
+          <li>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="">About</a>
+          </li>
+          <li>
+            <a href="">Contact Us</a>
+          </li>
+          <li>
+            <a href="">Gallery</a>
+          </li>
         </ul>
       </div>
     </nav>
 
     <!-- Homepage image with text -->
     <section>
-      <figcaption class="hp_img">
+      <figcaption class="hp-img">
         <img src="/images/homepage.jpeg" alt="green rice fields">
         <div>
           <h2>Sustainable Travel</h2>
@@ -49,18 +58,21 @@
 
     <div>
       <h3>Who?</h3>
-      <p>Sustainable Travel started in 2010 as an initiative to uplift communities and preserve exotic destinations. Tourism allows these communities to grow and live better lives. However, we did see the tourism industry does not follow a very eco-concious model and we have started to change that.  </p>
+      <p>Sustainable Travel started in 2010 as an initiative to uplift communities and preserve exotic destinations. Tourism
+        allows these communities to grow and live better lives. However, we did see the tourism industry does not follow
+        a very eco-concious model and we have started to change that. </p>
     </div>
     <div>
       <h3>What?</h3>
-<p>Travel with a difference - Our guests enjoy world-class standards without affecting immediate communities or the surrounding
-  environment.  By embracing our natural surroundings and working alongside the immediate communities, we reduce not only our carbon footprints but also uplift the native residents in the areas.</p>
+      <p>Travel with a difference - Our guests enjoy world-class standards without affecting immediate communities or the surrounding
+        environment. By embracing our natural surroundings and working alongside the immediate communities, we reduce not
+        only our carbon footprints but also uplift the native residents in the areas.</p>
     </div>
     <div>
       <h3>Where?</h3>
-<p>We specialize in exotic/tropical destinations. Give back to the environment and local communities by checking into our eco-resorts
-  in Vietnam, India and Sri Lanka. We scout rural and isolated locations in exotic destinations.
-  Being able to enjoy a luxurious holiday and simultaneously uplifting a community is a wonderful experience. </p>
+      <p>We specialize in exotic/tropical destinations. Give back to the environment and local communities by checking into
+        our eco-resorts in Vietnam, India and Sri Lanka. We scout rural and isolated locations in exotic destinations. Being
+        able to enjoy a luxurious holiday and simultaneously uplifting a community is a wonderful experience. </p>
     </div>
 
   </article>
@@ -81,9 +93,10 @@
               <p>
                 <%= destination.meta_description %>
               </p>
-              <div>
-                <span>Be my Guest</span>
-              </div>
+
+            </div>
+            <div>
+              <span>Be my Guest</span>
             </div>
           </figcaption>
         </a>
@@ -91,7 +104,7 @@
       <% } %>
   </main>
 
-  <footer >
+  <footer>
 
 
     <div id="social-media-btns">
@@ -123,5 +136,24 @@
   </footer>
 
 </body>
+<script type="text/javascript">
+  // Menu-toggle button
+
+  $(document).ready(function () {
+    $("#menu-icon").on("click", function () {
+      $("nav ul").toggleClass("showing");
+    });
+  });
+
+  // Scrolling Effect
+
+  $(window).on("scroll", function () {
+    if ($(window).scrollTop()) {
+      $('nav').addClass('black');
+    } else {
+      $('nav').removeClass('black');
+    }
+  })
+</script>
 
 </html>
