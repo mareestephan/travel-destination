@@ -6,36 +6,7 @@ var Destinations = require('../models/Destinations');
 
 mongoose.connect('mongodb://stephan-travel:jk7890-jk7890@ds137600.mlab.com:37600/travel-destination');
 
-// /* GET home page. */
-// router.get('/', function (req, res, next) {
-//     res.render('destination', {
-       
-//     });
 
-// });
-
-
-// ========= populates destination with information from MLAB =======
-
-
-
-// router.get('/', function (req, res, next) {
-
-//     Destinations.find({}, function (err, destinations) {
-//         if (err) throw err;
-
-//         let data = {
-//             title: 'All posts',
-//             destinations: destinations
-//         }
-
-//         res.render('../views/destination', data);
-
-
-//     });
-
-
-// });
 
 //===========findById === =========
 
@@ -59,10 +30,6 @@ router.get('/:id', function (req, res, next){
     });
 
 });
-
-
-
-
 
 
 //========post to mlab DB =========
@@ -97,16 +64,10 @@ router.post('/', function (req, res, next) {
 
              if (err)
                  return res.status(500).send(err);
-
-            //  res.send('uploaded');
-            //  console.log('file uploaded bra');
-            //  res.redirect('/')
          });
 
-     } else {
-         res.send('files not present')
-
-     }
+     } 
+     ///////////////seperate image upload
      if (req.files) {
 
          let uploaded_image = req.files.uploaded_file2;
@@ -115,16 +76,10 @@ router.post('/', function (req, res, next) {
 
              if (err)
                  return res.status(500).send(err);
-
-            //  res.send('uploaded');
-             console.log('file uploaded bra');
-            //  res.redirect('/')
          });
 
-     } else {
-         res.send('files not present')
-
-     }
+     } 
+     ////////////////seperate image upload
      if (req.files) {
 
          let uploaded_image = req.files.uploaded_file3;
@@ -133,16 +88,11 @@ router.post('/', function (req, res, next) {
 
              if (err)
                  return res.status(500).send(err);
-
-            //  res.send('uploaded');
-             console.log('file uploaded bra');
-            //  res.redirect('/')
+        
          });
 
-     } else {
-         res.send('files not present')
-
-     }
+     } 
+     //////////////seperate image upload
      if (req.files) {
 
          let uploaded_image = req.files.uploaded_file4;
@@ -152,26 +102,19 @@ router.post('/', function (req, res, next) {
              if (err)
                  return res.status(500).send(err);
 
-            //  res.send('uploaded');
-             console.log('file uploaded bra');
-            //  res.redirect('/')
+         
          });
 
-     } else {
-         res.send('files not present')
-
-     }
+     } 
+     ////////////////seperate image upload
      if (req.files) {
 
-         let uploaded_image = req.files.uploaded_file5;
+         let uploaded_image = req.files.uploaded_file5;        
 
          uploaded_image.mv('./public/images/' + uploaded_image.name, function (err) {
 
              if (err)
-                 return res.status(500).send(err);
-
-            //  res.send('uploaded');
-             console.log('file uploaded bra');
+                 return res.status(500).send(err);  
              res.redirect('/')
          });
 
